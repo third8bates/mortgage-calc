@@ -8,23 +8,20 @@ function MortgageInterestCalculator() {
   const [monthlyPayment, setMonthlyPayment] = useState('');
 
   const calculate = () => {
+    //calculate monthly payment
+    const monthlyPayment = ((rate / 100 / 12) * principal) / (1 - Math.pow((1 + (rate / 100 / 12)), ((term * -1) * 12))) 
+    setMonthlyPayment(monthlyPayment.toFixed(2));
 
-    const monthlyPayment =
+    //calculate total interest paid over life of loan
+    const totalInterest = ((monthlyPayment * term * 12) - principal)
+    setTotalInterest(totalInterest.toFixed(2));
 
-      ((rate / 100 / 12) * principal) / (1 - Math.pow((1 + (rate / 100 / 12)), ((term * -1) * 12))) 
-      
-      setMonthlyPayment(monthlyPayment.toFixed(2));
-
-      const totalInterest = ((monthlyPayment * term * 12) - principal)
-
-      setTotalInterest(totalInterest.toFixed(2));
-      
   }
 
 
   return (
     <div>
-      <h1>Mortgage Interest Calculator</h1>
+      <h1>Monthly Mortgage Payment Calculator</h1>
       <div>
         <label>Principal Loan Amount ($):</label>
         <input 
@@ -49,6 +46,7 @@ function MortgageInterestCalculator() {
           onChange={(e) => setTerm(parseInt(e.target.value, 10))} 
         />
       </div>
+      <br></br>
       <button onClick={calculate}>Calculate</button>
       {monthlyPayment > 0 && (
         <div>
