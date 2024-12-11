@@ -10,7 +10,7 @@ body {
 
 h1 {
   margin-top: 0;
-  font-size: 22px;
+  color: indigo;
 }
 
 h2 {
@@ -46,45 +46,27 @@ ul {
   padding-inline-start: 20px;
 }
 
-* {
-  box-sizing: border-box;
+button {
+	box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	background:linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+	background-color:#63b8ee;
+	border-radius:6px;
+	border:1px solid #3866a3;
+	display:inline-block;
+	cursor:pointer;
+	color:#14396a;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #7cacde;
 }
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
+button:hover {
+	background:linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
+	background-color:#468ccf;
 }
-
-.square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-}
-
-.board-row:after {
-  clear: both;
-  content: '';
-  display: table;
-}
-
-.status {
-  margin-bottom: 10px;
-}
-.game {
-  display: flex;
-  flex-direction: row;
-}
-
-.game-info {
-  margin-left: 20px;
+button:active {
+	position:relative;
+	top:1px;
 }
