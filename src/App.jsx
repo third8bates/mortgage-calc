@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function MortgageInterestCalculator() {
   const [principal, setPrincipal] = useState('');
